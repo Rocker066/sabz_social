@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('social.urls', namespace='social'))
 ]
 
+# Include media folder path
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

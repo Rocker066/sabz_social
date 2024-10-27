@@ -128,4 +128,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Define the inherited User model from AbstractUser to be replaced for default User model in the admin panel
 AUTH_USER_MODEL = 'social.User'
+
+# Login/Logout URL
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
+
+# Define authentication backend to include our custom authentication
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'social.authentication.PhoneAuthBackend',
+]
